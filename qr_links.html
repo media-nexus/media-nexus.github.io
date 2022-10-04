@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title> QR Links </title>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, nosnippet"/>
+  <meta name="author" content="Eugen Epure">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<h1 style="text-align: center;">Link-uri...</h1>
+
+<div style="display: flex; justify-content: center; text-align: center;" id="qrcode"></div>
+<hr><hr>
+
+<script src="https://cdn.jsdelivr.net/npm/davidshimjs-qrcodejs@0.0.2/qrcode.min.js"></script>
+
+<script type="text/javascript">
+
+function Link(d, u) {
+	return {description: d, url: u};
+}
+
+/***********************  LINKS  **************************************/
+const links = [];
+links.push(Link('Google', 'https://www.google.ro/'));
+links.push(Link('DuckDuckGo', 'https://duckduckgo.com/'));
+links.push(Link('Radioamator.ro', 'https://www.radioamator.ro/'));
+links.push(Link('Youtube', 'https://www.youtube.com/'));
+links.push(Link('Elforum', 'https://www.elforum.info/'));
+
+/*********************************************************************/
+qr_size = screen.width;
+if(qr_size < 300) qr_size = 300;
+if(qr_size > 0.7 * screen.height) qr_size = 0.7 * screen.height;
+
+function check(index) {
+      let website = links[index].url;
+      if (website) {
+        let qrcodeContainer = document.getElementById("qrcode");
+        qrcodeContainer.innerHTML = "";
+        new QRCode(qrcodeContainer, {
+					text: website,
+					width: qr_size,
+					height: qr_size,          
+					correctLevel: QRCode.CorrectLevel.H
+					});
+		}
+}
+
+ 
+for(let i = 0; i < links.length; i++) {
+	/* <input type="radio" name="" onclick="" value=""> */
+	document.body.innerHTML += '<input type="radio" ' +
+								'name="url_selector" ' +
+								'onclick="check(this.value)" ' +
+								'value=' + i + '> ' + 
+								'<a href=' + links[i].url + 
+								' target="_blank">' + 
+								+ (i+1) + '. ' +links[i].description + 
+								'</a> <hr>';
+}
+</script>
+
+</body>
+</html>
