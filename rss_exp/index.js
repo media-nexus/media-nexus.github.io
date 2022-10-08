@@ -1,6 +1,6 @@
 const feedItems = [];
 const feedElement = document.querySelector(".feed");
-const feedFile = "app/feeds.json";
+const feedFile = "feeds.json";
 
 function logResult(res) {
   return res;
