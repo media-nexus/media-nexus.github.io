@@ -1,11 +1,8 @@
 [
   {
-    "feedUrl": "https://www.elforum.info/rss/1-noutati.xml/"
+    "feedUrl": "https://www.elforum.info/rss/1-noutati.xml"
   },
   {
-    "feedUrl": "https://www.elforum.info/rss/1-noutati.xml/"
+    "feedUrl": "http://quiterss.org/en/rss.xml"
   },
-  {
-    "feedUrl" : "https://www.elforum.info/rss/1-noutati.xml/"
-  }
 ]
