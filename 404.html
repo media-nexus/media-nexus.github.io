@@ -18,14 +18,13 @@
         const new_url = url.replace(link_replace, link_replace_with).replace(filename, real_filename);
         
         document.title = real_filename;
-        document.body.innerHTML += '<iframe src="https://docs.google.com/gview?url='
-                                    + new_url + '&embedded=true" style="width: 90%; '
-                                    + 'height: 1000px"> <p>Your browser does not '
-                                    + 'support iframes.</p> </iframe>';
+        document.body.innerHTML = '<iframe style = "position:absolute; top:0; left:0; width:100%; height:100%;"' + 
+                                  'src = "/documents/ViewerJS/#../index.odt"  allowfullscreen webkitallowfullscreen>' +
+                                  '</iframe> <p>Your browser does not support iframes.</p> </iframe>';
       }
       else {
-        
-        document.body.innerHTML += '<p>The requested page was not found: ' + 
+        document.title = 'Error 404: page not found';
+        document.body.innerHTML = '<p><b>The requested page was not found: </b>' + 
                                     window.location.href + '</p>';
       }
     </script>
