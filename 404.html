@@ -18,7 +18,7 @@
         getUrl.pathname = new_path;
         
         document.title = real_filename;
-        if(extension==='pdf' && navigator.pdfViewerEnabled)
+        if(extension==='pdf' && (navigator.pdfViewerEnabled || ('PDF Viewer' in navigator.plugins))
           window.location.replace(getUrl.href);       
         
         /* modificari pt path... viewerjs nu e in root... */
