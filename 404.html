@@ -9,8 +9,7 @@
     <script type="text/javascript">
       /* proof of concept, load by 404 js */
       var getUrl = new URL(window.location.href);
-      const filename = getUrl.pathname.split('/').pop();
-      
+      const filename = getUrl.pathname.split('/').pop();     
       
       if(filename.startsWith('@')) {
         const real_filename = filename.replace('@', '');
@@ -23,7 +22,7 @@
           window.location.replace(getUrl.href);       
         
         /* modificari pt path... viewerjs nu e in root... */
-        const doc_path = path.replace('/documents','');
+        const doc_path = getUrl.pathname.replace('/documents','');
         document.body.innerHTML = '<iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" ' + 
                                   'src="/documents/ViewerJS/#..' + doc_path + 
                                   '" allowfullscreen webkitallowfullscreen></iframe>';
