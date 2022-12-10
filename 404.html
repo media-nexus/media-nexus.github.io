@@ -8,20 +8,19 @@
   <body>    
     <script type="text/javascript">
       /* proof of concept, load by 404 js */
-      const url = window.location.href;
-      const filename = url.split('/').pop();
-      const new_url = new URL(url);     
+      var getUrl = new URL(window.location.href);
+      const filename = getUrl.pathname.split('/').pop();
+      
       
       if(filename.startsWith('@')) {
         const real_filename = filename.replace('@', '');
         const extension = real_filename.split('.').pop().toLowerCase();
-        const path = new_url.pathname.replace(filename, real_filename);
+        const new_path = getUrl.pathname.replace(filename, real_filename);
+        getUrl.pathname = new_path;
         
         document.title = real_filename;
         if(extension==='pdf' && navigator.pdfViewerEnabled)
-          window.location.replace(path);
-        
-        
+          window.location.replace(getUrl.href);       
         
         /* modificari pt path... viewerjs nu e in root... */
         const doc_path = path.replace('/documents','');
