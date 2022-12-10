@@ -8,15 +8,18 @@
   <body>    
     <script type="text/javascript">
       /* proof of concept, load by 404 js */
-      const domain = 'media-nexus.github.io';
+      const link_replace = 'media-nexus.github.io';
+      const link_replace_with = 'media-nexus.github.io';
       const url = window.location.href;
       const filename = url.split('/').pop();
       
       if(filename.startsWith('@')) {
         const real_filename = filename.replace('@', '');
+        const new_url = url.replace(link_replace, link_replace_with).replace(filename, real_filename);
+        
         document.title = real_filename;
         document.body.innerHTML += '<iframe src="https://docs.google.com/gview?url='
-                                    + url + '&embedded=true" style="width: 90%; '
+                                    + new_url + '&embedded=true" style="width: 90%; '
                                     + 'height: 1000px"> <p>Your browser does not '
                                     + 'support iframes.</p> </iframe>';
       }
