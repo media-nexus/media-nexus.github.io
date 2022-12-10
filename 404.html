@@ -23,9 +23,10 @@
         
         
         
-        /* modificari pt path... */
+        /* modificari pt path... viewerjs nu e in root... */
+        const doc_path = path.replace('/documents','');
         document.body.innerHTML = '<iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" ' + 
-                                  'src="/documents/ViewerJS/#../' + real_filename + 
+                                  'src="/documents/ViewerJS/#..' + doc_path + 
                                   '" allowfullscreen webkitallowfullscreen></iframe>';
       }
       else {
