@@ -17,9 +17,12 @@
         const path = new_url.pathname.replace(filename, real_filename);
         
         document.title = real_filename;
+        alert(path);
+        /*
         document.body.innerHTML = '<iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" ' + 
                                   'src="/documents/ViewerJS/#..' + path + '" allowfullscreen webkitallowfullscreen>' +
                                   '<p>Your browser does not support iframes.</p> </iframe>';
+        */
       }
       else {
         document.title = 'Error 404: page not found';
