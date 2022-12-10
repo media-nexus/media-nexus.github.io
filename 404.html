@@ -3,19 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>    
+    <title></title>    
   </head>
   <body>    
     <script type="text/javascript">
-    /* proof of concept, load by 404 js */
-      if(window.location.href.includes('load-')) {
-        let url = window.location.href.replace('load-', '');
+      /* proof of concept, load by 404 js */
+      const domain = 'media-nexus.github.io';
+      const url = window.location.href;
+      const filename = url.split('/').pop();
+      
+      if(filename.startsWith('@')) {
+        const real_filename = filename.replace('@', '');
+        document.title = real_filename;
         document.body.innerHTML += '<iframe src="https://docs.google.com/gview?url='
                                     + url + '&embedded=true" style="width: 90%; '
                                     + 'height: 1000px"> <p>Your browser does not '
-                                    + 'support iframes.</p> </iframe>'        
+                                    + 'support iframes.</p> </iframe>';
       }
       else {
+        
         document.body.innerHTML += '<p>The requested page was not found: ' + 
                                     window.location.href + '</p>';
       }
