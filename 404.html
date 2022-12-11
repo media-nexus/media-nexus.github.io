@@ -41,28 +41,24 @@
           case 'doc':
           case 'docx':
           case 'xls':
-            gDocsViewer(getUrl.href);
+          case 'xlsx':
+          case 'ppt':
+          case 'pptx':
+            document.body.innerHTML = '<iframe src="https://docs.google.com/gview?url='
+                                      + url + '&embedded=true"><p>Your browser does not '
+                                      + 'support iframes.</p> </iframe>';
+            
           default:
             window.open('getUrl.href', "_blank") || window.location.replace('getUrl.href');
         }
-        
-        /*
-        else {        
-          
-        }*/
+
       }
       else {
         document.title = 'Error: 404 - page not found';
         document.body.innerHTML = '<p><b>The requested page was not found: </b>' + 
                                     window.location.href + '</p>';
       }
-      
-      function gDocsViewer(url) {
-        document.body.innerHTML = '<iframe src="https://docs.google.com/gview?url='
-                                      + url + '&embedded=true"><p>Your browser does not '
-                                      + 'support iframes.</p> </iframe>'
-      }
-    </script>
-    
+ 
+    </script>    
   </body>
 </html>
