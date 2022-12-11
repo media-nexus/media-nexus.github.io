@@ -27,7 +27,8 @@
             if(navigator.pdfViewerEnabled || ('PDF Viewer' in navigator.plugins)) {
               window.location.replace(getUrl.href);
               break;
-            }            
+            }
+          
           case 'odt':
           case 'ods':
           case 'odp':
@@ -38,6 +39,7 @@
             document.body.innerHTML = '<iframe src="/documents/ViewerJS/#..' + doc_path + 
                                       '" allowfullscreen webkitallowfullscreen></iframe>';
             break;
+          
           case 'doc':
           case 'docx':
           case 'xls':
@@ -47,6 +49,7 @@
             document.body.innerHTML = '<iframe src="https://docs.google.com/gview?url='
                                       + url + '&embedded=true"><p>Your browser does not '
                                       + 'support iframes.</p> </iframe>';
+            break;
             
           default:
             window.open('getUrl.href', "_blank") || window.location.replace('getUrl.href');
