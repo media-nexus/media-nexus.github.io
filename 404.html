@@ -24,28 +24,31 @@
         
         switch(extension) {
           case 'pdf':
-            if(navigator.pdfViewerEnabled || ('PDF Viewer' in navigator.plugins))
+            if(navigator.pdfViewerEnabled || ('PDF Viewer' in navigator.plugins)) {
               window.location.replace(getUrl.href);
-            else gDocsViewer(getUrl.href);
-            break;
+              break;
+            }            
           case 'odt':
           case 'ods':
           case 'odp':
           case 'odg':
           case 'odf':
-            gDocsViewer(getUrl.href);
+            // modificari pt path... viewerjs nu e in root...
+            const doc_path = getUrl.pathname.replace('/documents','');
+            document.body.innerHTML = '<iframe src="/documents/ViewerJS/#..' + doc_path + 
+                                      '" allowfullscreen webkitallowfullscreen></iframe>';
             break;
+          case: 'doc':
+          case: 'docx':
+          case: 'xls':
+            gDocsViewer(getUrl.href);
           default:
             window.open('getUrl.href', "_blank") || window.location.replace('getUrl.href');
         }
         
         /*
         else {        
-          // modificari pt path... viewerjs nu e in root...
-          const doc_path = getUrl.pathname.replace('/documents','');
-          document.body.innerHTML = '<iframe style="" ' + 
-                                    'src="/documents/ViewerJS/#..' + doc_path + 
-                                    '" allowfullscreen webkitallowfullscreen></iframe>';
+          
         }*/
       }
       else {
