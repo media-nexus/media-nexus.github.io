@@ -47,12 +47,12 @@
           case 'ppt':
           case 'pptx':
             document.body.innerHTML = '<iframe src="https://docs.google.com/gview?url='
-                                      + url + '&embedded=true"><p>Your browser does not '
+                                      + getUrl.href + '&embedded=true"><p>Your browser does not '
                                       + 'support iframes.</p> </iframe>';
             break;
             
           default:
-            window.open('getUrl.href', "_blank") || window.location.replace('getUrl.href');
+            window.open(getUrl.href, "_blank") || window.location.replace(getUrl.href);
         }
 
       }
