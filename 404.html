@@ -8,7 +8,8 @@
       iframe {position:absolute; top:0; left:0; width:100%; height:100%;}
     </style>
   </head>
-  <body>    
+  <body>
+    <script type="text/javascript" src="drawdown.js"></script>
     <script type="text/javascript">
       /* proof of concept, load by 404 js */
       var getUrl = new URL(window.location.href);
@@ -24,10 +25,10 @@
         
         switch(extension) {
           case 'md':
-            fetch(new_path)
+            fetch(getUrl.href)
               .then(response => response.text())
               .then((data) => {
-                console.log(data)
+                document.body.innerHTML = markdown(data);
               })
             break;
             
