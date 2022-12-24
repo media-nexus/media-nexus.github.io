@@ -23,10 +23,18 @@
         document.title = real_filename;
         
         switch(extension) {
+          case 'md':
+            fetch(new_path)
+              .then(response => response.text())
+              .then((data) => {
+                console.log(data)
+              })
+            break;
+            
           case 'pdf':
             if(navigator.pdfViewerEnabled || ('PDF Viewer' in navigator.plugins)) {
               window.location.replace(getUrl.href);
-              break;
+            break;
             }
           
           case 'doc':
