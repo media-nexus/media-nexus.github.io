@@ -1,5 +1,3 @@
-% Titlul documentului
-
 # drawdown
 
 ---
