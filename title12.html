@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Eugen Epure's website </title>
-<link rel="stylesheet" type="text/css" href="style12.css">
+<link rel="stylesheet" type="text/css" href="css/style12.css">
 </head>
 
 <body>
@@ -68,9 +68,9 @@
     <br>	
 </div>
 
-<script type="text/javascript" src="drawdown.js"></script>
+<script type="text/javascript" src="js/drawdown.js"></script>
 <script type="text/javascript">
-	fetch('drawdown.md')
+	fetch('content/drawdown.md')
 		.then(response => response.text())
 		.then((data) => {
 			document.getElementById('content').innerHTML = markdown(data);
