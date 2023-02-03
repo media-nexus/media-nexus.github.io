@@ -81,15 +81,13 @@
 	
 	const c = getParameterByName('c');
 	const p = getParameterByName('p');
-	document.getElementById('content').innerHTML = c+"/"+p;
-	//const path = getParameterByName('c') + '/' getParameterByName('p');
-	//alert(path);
-/*
-	fetch()
+	const docUrl = c + "/" + p;
+	
+	fetch(docUrl)
 		.then(response => response.text())
 		.then((data) => {
 			document.getElementById('content').innerHTML = markdown(data);
-		})*/
+		})
 </script>
 
 </body>
