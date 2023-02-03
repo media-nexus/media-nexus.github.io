@@ -68,9 +68,9 @@
     <br>	
 </div>
 
-<script type="text/javascript" src="js/drawdown.js"></script>
+<script type="text/javascript" src="./drawdown.js"></script>
 <script type="text/javascript">
-	fetch('./content/article.md')
+	fetch('./article.md')
 		.then(response => response.text())
 		.then((data) => {
 			document.getElementById('content').innerHTML = markdown(data);
