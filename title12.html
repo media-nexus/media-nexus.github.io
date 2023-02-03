@@ -79,7 +79,9 @@
     		return decodeURIComponent(results[2].replace(/\+/g, ' '));
 	}
 	
-	document.getElementById('content').innerHTML = getParameterByName('p');
+	const c = getParameterByName('c');
+	const p = getParameterByName('p');
+	document.getElementById('content').innerHTML = c+"/"+p;
 	//const path = getParameterByName('c') + '/' getParameterByName('p');
 	//alert(path);
 /*
