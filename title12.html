@@ -78,12 +78,14 @@
     		if (!results[2]) return '';
     		return decodeURIComponent(results[2].replace(/\+/g, ' '));
 	}
-
-	fetch(getParameterByName('c') + '/' getParameterByName('p'))
+	
+	const path = getParameterByName('c') + '/' getParameterByName('p');
+/*
+	fetch()
 		.then(response => response.text())
 		.then((data) => {
 			document.getElementById('content').innerHTML = markdown(data);
-		})
+		})*/
 </script>
 
 </body>
