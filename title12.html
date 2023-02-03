@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Eugen Epure's website </title>
+<link rel="stylesheet" type="text/css" href="style12.css">
+</head>
+
+<body>
+
+<header>
+	<div>
+		<span class="left" style="color: #00a; font-family: serif;"><i><b>Eugene's website</b></i></span>
+		<span class="right">
+			<form action="https://duckduckgo.com/" target="_blank">
+			<input type="hidden" value="https://eesite.bitbucket.io" name="sites"></input>
+			<input type="hidden" value="1" name="kn"></input>
+			<input type="hidden" value="1" name="kac"></input>
+			<input type="search" placeholder="Search..." name="q" style="width: 10em;"></input>
+			<input type="submit" value="Go!" style="float: right; width: 4em;">
+			</form>
+		</span>
+	</div>
+
+<div class="asciiart">
+<pre style="font-family: monospace,monospace; font-size: 0.5em; padding: 0; margin: 5em 0 0 0; text-align: center;">
+    ______                                              .--.    --\\``-.           +-o-----------------o-----------------o-+
+   / ____/ __  __  ____ _  ___    ,___                 /    \      ))   :---       |                    \_____________     |
+  / __/   / / / / / __ `/ / _ \  / __ \               /   VDD\  --//..-`           | __   _____   ___ __  _____ _____  \|/ |
+ / /___  / /_/ / / /_/ / /  __/ / / / /              /     |  \                    | \ \ / / _ \ / _ \_ _|  ___|  ___|  V  |
+/_____/  \__,_/  \__, /  \___/ /_/ /_/.--.          /  ||--!   \          .--.     |  \ V / | | | (_) | || |_  | |_     |  |
+    ______      /____/               /    \        /,-o||       \        /    \    |   | || | | |\__, | ||  _| |  _|   --- |
+   / ____/ ,___    __  __  ,____  ___      \      / |  ||--,     \      /      .   |   | || |_| /  _/ | || |   | |     --- |
+  / __/   / __ \  / / / / / __ / / _ \      \    /--%      |-->   \    /           |   |_| \___/  |__/__\|_|   |_|      |  |
+ / /___  / /_/ / / /_/ / / /  ` /  __/       .__.   |  ||--!       .__.            |                                    3  |
+/_____/ / .___/  \__,_/ /_/     \___/               `--||                          |                                  __|__|
+       /_/     _____    __   _   _                     ||--,     .^^^^^^^^^^^^^.   |                                   --- |
+                    |__|  |_| |_| |_                       |VSS  |             |   |                                    `  |
+</pre>
+</div>
+
+<nav>
+	<br>
+    <p class="left" style="margin: 0;">
+    <a href="#home">Home</a> &nbsp;
+    <a href="#home">Sitemap</a> &nbsp;
+    <a href="#home">Links</a> &nbsp;
+    <a href="#home">Contact</a> &nbsp;
+    <a href="#home">About</a> &nbsp;
+    </p>
+</nav>
+</header>
+
+<div id="content">
+
+</div>
+
+<div id="footer">
+    <p class="center">
+    <a href=terms.html>Terms of use</a> &nbsp;
+    <a href=terms.html>About</a> &nbsp;
+    <a href=terms.html>Contact</a> &nbsp;
+    <a href=terms.html>YouTube</a> &nbsp;
+    </p>
+    <br>
+    <p class="center" > <i> &#169; Copyright 2012 - 2018, Eugen Epure. All rights reserved. <br> Last updated on Jul 07, 2018. </i> </p>
+    <br>	
+</div>
+
+<script type="text/javascript" src="js/drawdown.js"></script>
+<script type="text/javascript">
+	fetch('./content/article.md')
+		.then(response => response.text())
+		.then((data) => {
+			document.getElementById('content').innerHTML = markdown(data);
+		})
+</script>
+
+</body>
+</html>
