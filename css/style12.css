@@ -7,18 +7,18 @@ body { margin: auto; max-width: 50em;
 a { color: #00a; text-decoration: none; font-family: monospace, monospace;
 	font-weight: bold; font-size: 1em; }
 nav a, #footer a { padding: 0.5em; border: 2px solid #00a; border-radius: 2em; line-height: 3em; }
-nav a:hover, #footer a:hover { border-radius: 0.5em; background-color: #ffb; }
+nav a:hover, #footer a:hover { border-radius: 0; background-color: #ffb; }
 
 h1,h2 {font-family: serif, serif; font-style: italic;}
 
-header { padding: 1em; color: #000; }
+header { padding: 0.5em; color: #000; border-bottom: 2px solid #00a; }
 
-#content { padding: 1em; min-height: 20em; line-height: 1.5; 
+#content { padding: 0.5em; min-height: 20em; line-height: 1.5; 
 			font-size: 1em; text-align: justify; }
 
-#footer { padding: 0.5em; }
+#footer { padding: 0em; border-top: 2px solid #00a;}
 
-hr { margin: 1em; border: 0; height: 2px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0)); }
+hr { margin: 1em; border: 0; height: 2px; }
 
 .center,h1 { text-align: center; }
 .right { float: right; }
