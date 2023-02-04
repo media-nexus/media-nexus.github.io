@@ -1,11 +1,9 @@
-body { margin: auto; max-width: 50em;         
-        font-family: Helvetica, sans-serif; font-size: 1em;
-		color: #000;
-		background-color: #bce;
-}
+body { margin: auto; max-width: 50em; font-family: Helvetica, sans-serif; font-size: 1em;
+	color: #000; background-color: #bce; }
 
 a { color: #00a; text-decoration: none; font-family: monospace, monospace;
 	font-weight: bold; font-size: 1em; }
+
 nav a, #footer a { padding: 0.5em; border: 2px solid #00a; border-radius: 2em; line-height: 3em; }
 nav a:hover, #footer a:hover { border-radius: 0; background-color: #ffb; }
 
@@ -13,19 +11,18 @@ h1,h2 {font-family: serif, serif; font-style: italic;}
 
 header { padding: 0.5em; color: #000; border-bottom: 2px solid #00a; }
 
-#content { padding: 0.5em; min-height: 20em; line-height: 1.5; 
-			font-size: 1em; text-align: justify; }
+#content { padding: 0.5em; min-height: 20em; line-height: 1.5; font-size: 1em; }
 
 #footer { padding: 0em; border-top: 2px solid #00a;}
 
-hr { margin: 1em 0; border: 0; border-bottom: 1px solid #ccc; }
-blockquote { margin-left: 0; padding: 0.5em 0 0.5em 2em; border-left: 3px solid rgb(211, 218, 234); }
+hr { margin: 1em 0; border: 0; border-bottom: 1px solid #99c; }
+blockquote { margin-left: 0; padding: 0.5em 0 0.5em 2em; border-left: 3px solid #def; }
 li, code { margin: 0.4em 0; }
-code { background: rgba(211, 218, 234, 0.25); }
+code { background-color: #cdf; }
 pre > code { display: block; padding: 0.5em 4em; }
 table { border-spacing: 0; border-collapse: collapse; }
 td { padding: 4px 8px; }
-tr:nth-child(2n) { background: #f3f3f3; }
+tr:nth-child(2n) { background: #def; }
 th { border-bottom: 1px solid #aaa; }
 img { max-width: 96px; }
 
