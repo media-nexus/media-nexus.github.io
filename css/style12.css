@@ -18,7 +18,16 @@ header { padding: 0.5em; color: #000; border-bottom: 2px solid #00a; }
 
 #footer { padding: 0em; border-top: 2px solid #00a;}
 
-hr { margin: 1em; border: 0; height: 2px; }
+hr { margin: 1em 0; border: 0; border-bottom: 1px solid #ccc; }
+blockquote { margin-left: 0; padding: 0.5em 0 0.5em 2em; border-left: 3px solid rgb(211, 218, 234); }
+li, code { margin: 0.4em 0; }
+code { background: rgba(211, 218, 234, 0.25); }
+pre > code { display: block; padding: 0.5em 4em; }
+table { border-spacing: 0; border-collapse: collapse; }
+td { padding: 4px 8px; }
+tr:nth-child(2n) { background: #f3f3f3; }
+th { border-bottom: 1px solid #aaa; }
+img { max-width: 96px; }
 
 .center,h1 { text-align: center; }
 .right { float: right; }
