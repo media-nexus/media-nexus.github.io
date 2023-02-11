@@ -4,7 +4,7 @@ body { margin: auto; max-width: 50em; font-family: Helvetica, sans-serif; font-s
 a { color: #00a; text-decoration: none; font-family: monospace, monospace;
 	font-weight: bold; font-size: 1em; }
 
-nav a, #footer a { border: 2px solid #00a; border-radius: 2em; line-height: 3em; }
+nav a, #footer a { padding: 0.5em; border: 2px solid #00a; border-radius: 2em; line-height: 3em; }
 nav a:hover, #footer a:hover { border-radius: 0; }
 
 h1,h2 {font-family: serif, serif; font-style: italic;}
