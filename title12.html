@@ -70,7 +70,7 @@
 	fetch(docUrl)
 		.then(response => response.text())
 		.then((data) => {
-			document.getElementById('content').innerHTML = "<pre><p>" + markdown(data) + "</p></pre>";
+			document.getElementById('content').innerHTML = "<xmp>" + markdown(data) + "</xmp>";
 		})
 </script>
 
