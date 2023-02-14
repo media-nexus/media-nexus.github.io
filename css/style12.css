@@ -1,5 +1,6 @@
 body { margin: auto; max-width: 50em; font-family: Helvetica, sans-serif; font-size: 1em;
-	color: #000; background-color: #bce; }
+	background-image: url("blpaper.png"); background-repeat: repeat;
+	color: #000; }
 
 a { color: #00a; text-decoration: none; font-family: monospace, monospace;
 	font-weight: bold; font-size: 1em; }
