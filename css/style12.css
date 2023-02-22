@@ -10,11 +10,11 @@ nav a:hover, #footer a:hover { border-radius: 0; }
 
 h1,h2,h3,h4,h5 { font-family: serif,serif; }
 
-header { padding-top: 1em; border: 1px solid #00a; border-radius: 0 0 1em 1em; border-top: 0; padding: 0; background-color: #ddd; }
+header { padding-top: 2em; border: 1px solid #00a; border-radius: 0 0 1em 1em; border-top: 0; padding: 0; background-color: #ddd; }
 
 #content { padding: 1em; min-height: 20em; border: 1px solid #00a; border-radius: 1em; line-height: 1.5; font-size: 1em; text-align: justify; background-color: #ddd; }
 
-#footer { padding-bottom: 1em; border: 1px solid #00a; border-radius: 1em 1em 0 0; border-bottom: 0; padding: 0; background-color: #ddd; }
+#footer { padding-bottom: 2em; border: 1px solid #00a; border-radius: 1em 1em 0 0; border-bottom: 0; padding: 0; background-color: #ddd; }
 
 hr { margin: 1em 0; border: 0; border-bottom: 1px solid #99c; }
 blockquote { margin-left: 0; padding: 0.5em 0 0.5em 2em; border-left: 3px solid #def; }
