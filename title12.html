@@ -67,7 +67,7 @@
 	const p = getParameterByName('p');
 	const docUrl = c + "/" + p;
 	
-	fetch(docUrl)
+	fetch(docUrl, {cache: "no-store"})
 		.then(response => response.text())
 		.then((data) => {
 			document.getElementById('content').innerHTML = markdown(data);
