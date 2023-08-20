@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media-nexus.github.io</title>
+    <link rel="stylesheet" type="text/css" href="css/style_404.css">    
+  </head>
+  <body>
+    <script type="text/javascript" src="js/drawdown.js"></script>
+    <script type="text/javascript">
+      /* proof of concept, load by 404 js */
+      var getUrl = new URL(window.location.href);
+      const filename = getUrl.pathname.split('/').pop();     
+      
+      if(filename.startsWith('@')) {
+        const real_filename = filename.replace('@', '');
+        const extension = real_filename.split('.').pop().toLowerCase();
+        const new_path = getUrl.pathname.replace(filename, real_filename);
+        getUrl.pathname = new_path;
+        
+        document.title = real_filename;
+        
+        switch(extension) {
+          case 'md':
+            fetch(getUrl.href)
+              .then(response => response.text())
+              .then((data) => {
+                document.body.innerHTML = markdown(data);
+              })
+            break;
+            
+          case 'pdf':
+            if(navigator.pdfViewerEnabled || ('PDF Viewer' in navigator.plugins)) {
+              window.location.replace(getUrl.href);
+            break;
+            }
+          
+          case 'doc':
+          case 'docx':
+          case 'xls':
+          case 'xlsx':
+          case 'ppt':
+          case 'pptx':
+            document.body.innerHTML = '<iframe src="https://docs.google.com/gview?url='
+                                      + getUrl.href + '&embedded=true"><p>Your browser does not '
+                                      + 'support iframes.</p> </iframe>';
+            break;
+          
+          case 'odt':
+          case 'ods':
+          case 'odp':
+          case 'odg':
+          case 'odf':
+            // modificari pt path... viewerjs nu e in root...
+            const doc_path = getUrl.pathname.replace('/documents','');
+            document.body.innerHTML = '<iframe src="/documents/ViewerJS/#..' + doc_path + 
+                                      '" allowfullscreen webkitallowfullscreen></iframe>';
+            break;         
+            
+          default:
+            window.open(getUrl.href, "_blank") || window.location.replace(getUrl.href);
+        }
+
+      }
+      else {
+        document.title = 'Error: 404 - page not found';
+        document.body.innerHTML = '<p><b>The requested page was not found: </b>' + 
+                                    window.location.href + '</p>';
+      }
+ 
+    </script>    
+  </body>
+</html>
