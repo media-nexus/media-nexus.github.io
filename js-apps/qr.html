@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title> QR Link </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<div style="justify-content: center; text-align: center;" id="qrcode"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/davidshimjs-qrcodejs@0.0.2/qrcode.min.js"></script>
+
+<script type="text/javascript">
+
+function getParameterByName(name, url = window.location.href) {
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+  results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+  
+qr_size = screen.width;
+if(qr_size < 300) qr_size = 300;
+if(qr_size > 0.7 * screen.height) qr_size = 0.7 * screen.height;
+
+const b64_url = getParameterByName('url');
+
+if(b64_url) {
+  const website = atob(b64_url);
+  let qrcodeContainer = document.getElementById("qrcode");
+        qrcodeContainer.innerHTML = "";
+        new QRCode(qrcodeContainer, {
+					text: website,
+					width: qr_size,
+					height: qr_size,          
+					correctLevel: QRCode.CorrectLevel.H
+					});
+		}
+}
+
+</script>
+
+</body>
+</html>
