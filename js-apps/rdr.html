@@ -31,7 +31,7 @@ p { color: #fff; font-family: serif, serif; font-size: 1.5em; line-height: 1.5; 
 	  const b64_url = getParameterByName('url');
     
     if(b64_url) {
-      const url = btoa(b64_url);
+      const url = atob(b64_url);
       alert(url);
       const link = document.getElementById('link');
       link.href = 'url';      
