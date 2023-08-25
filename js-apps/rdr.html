@@ -35,7 +35,7 @@ p { color: #fff; font-family: serif, serif; font-size: 1.5em; line-height: 1.5; 
       const link = document.getElementById('link');
       link.href = url;
       link.innerHTML = url;
-      wait new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 2000));
       window.location.replace(url);
     }
   </script>
