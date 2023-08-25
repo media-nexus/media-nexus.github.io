@@ -19,25 +19,29 @@ p { color: #fff; font-family: serif, serif; font-size: 1.5em; line-height: 1.5; 
   <p><a id="link" href="#">link</a></p>
   
   <script type="text/javascript">
-	  function getParameterByName(name, url = window.location.href) {
-    	name = name.replace(/[\[\]]/g, '\\$&');
-    	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-       	results = regex.exec(url);
-    	if (!results) return null;
-    	if (!results[2]) return '';
-    	return decodeURIComponent(results[2].replace(/\+/g, ' '));
-	  }
+	function getParameterByName(name, url = window.location.href) {
+    		name = name.replace(/[\[\]]/g, '\\$&');
+    		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+       		results = regex.exec(url);
+    		if (!results) return null;
+    		if (!results[2]) return '';
+    		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
+
+	function sleep(ms) {
+    		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+	  
+	const b64_url = getParameterByName('url');
 	
-	  const b64_url = getParameterByName('url');
-    
-    if(b64_url) {
-      const url = atob(b64_url);
-      const link = document.getElementById('link');
-      link.href = url;
-      link.innerHTML = url;
-      await new Promise(r => setTimeout(r, 2000));
-      window.location.replace(url);
-    }
+	if(b64_url) {
+     		const url = atob(b64_url);
+      		const link = document.getElementById('link');
+      		link.href = url;
+      		link.innerHTML = url;
+      		sleep(2000);
+      		window.location.replace(url);
+    	}
   </script>
 </body>
 </html>
