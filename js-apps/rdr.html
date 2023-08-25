@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+p { color: #fff; font-family: serif, serif; font-size: 1.5em; line-height: 1.5; }
+	a { color: #fff; text-decoration: none; }
+	body { background-color: #4267b3; }
+	
+	@media only screen and (min-width: 50em) {
+		/* desktop */
+		body { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+		p { max-width: 45em; }
+		}
+</style>
+</head>
+
+<body>
+  <p><a id="link" href="#"></a></p>
+  
+  <script type="text/javascript">
+	  function getParameterByName(name, url = window.location.href) {
+    	name = name.replace(/[\[\]]/g, '\\$&');
+    	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+       	results = regex.exec(url);
+    	if (!results) return null;
+    	if (!results[2]) return '';
+    	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	  }
+	
+	  const b64_url = getParameterByName('url');
+    
+    if(b64_url) {
+      const url = btoa(b64_url);
+      const link = document.getElementById('link');
+      link.href = 'url';      
+    }
+  </script>
+</body>
+</html>
