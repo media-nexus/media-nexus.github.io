@@ -16,7 +16,7 @@ p { color: #fff; font-family: serif, serif; font-size: 1.5em; line-height: 1.5; 
 </head>
 
 <body>
-  <p><a id="link" href="#"></a></p>
+  <p><a id="link" href="#">link</a></p>
   
   <script type="text/javascript">
 	  function getParameterByName(name, url = window.location.href) {
@@ -32,7 +32,6 @@ p { color: #fff; font-family: serif, serif; font-size: 1.5em; line-height: 1.5; 
     
     if(b64_url) {
       const url = atob(b64_url);
-      alert(url);
       const link = document.getElementById('link');
       link.href = 'url';      
     }
