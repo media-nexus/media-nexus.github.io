@@ -22,8 +22,8 @@ function getParameterByName(name, url = window.location.href) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
   
-qr_size = Math.round(0.7 * screen.width);
-if(qr_size > 0.7 * screen.height) qr_size = Math.round(0.7 * screen.height);
+qr_size = Math.round(0.7 * window.innerWidth);
+if(qr_size > 0.7 * window.innerHeight) qr_size = Math.round(0.7 * window.innerHeight);
 
 const b64_url = getParameterByName('url');
 
