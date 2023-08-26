@@ -22,7 +22,7 @@ function getParameterByName(name, url = window.location.href) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
   
-qr_size = screen.width;
+qr_size = 0.7 * screen.width;
 if(qr_size < 300) qr_size = 300;
 if(qr_size > 0.7 * screen.height) qr_size = 0.7 * screen.height;
 
