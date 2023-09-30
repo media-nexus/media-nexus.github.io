@@ -17,7 +17,7 @@
 
 <body>
 	<script type="text/javascript">
-		const links = [];
+		let links = [];
 
 		links.push('https://vezionline.net/logans-run-fuga-lui-logan-1976.html');
 		links.push('https://sitefilme.com/online/7182/'); // soylent green
@@ -26,7 +26,8 @@
 		links.push('https://soap2dayx.to/movie/medium-cool-596jq/1-1');
 		links.push('https://sitefilme.com/online/4786/'); // capricorn one
 
-		window.location.replace(links[Math.floor( Math.random() * links.length() )]);				
+		const url = links[ Math.floor( Math.random() * links.length() ) ];
+		window.location.replace(url);				
 	</script>
 </body>
 </html>
